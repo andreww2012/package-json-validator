@@ -174,7 +174,7 @@ const getSpecMap = (
 			scripts: { type: "object" },
 			version: { format: versionFormat, required: true, type: "string" },
 		};
-		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+		// eslint-disable-next-line ts/no-unnecessary-condition
 	} else if (specName == "commonjs_1.1") {
 		// http://wiki.commonjs.org/wiki/Packages/1.1
 		return {
@@ -231,7 +231,7 @@ const parse = (data: string) => {
 	}
 	let parsed;
 	try {
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+		// eslint-disable-next-line ts/no-unsafe-assignment
 		parsed = JSON.parse(data);
 	} catch (e: unknown) {
 		let errorMessage = "Invalid JSON";
@@ -249,7 +249,7 @@ const parse = (data: string) => {
 		return `Invalid JSON - not an object (actual type: ${typeof parsed})`;
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+	// eslint-disable-next-line ts/no-unsafe-return
 	return parsed;
 };
 
@@ -294,7 +294,7 @@ export const validate: ValidateFunction = (
 	specNameOrOptions: SpecName | ValidationOptions = "npm",
 	options: ValidationOptions = {},
 ): ValidationOutput => {
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+	// eslint-disable-next-line ts/no-unsafe-assignment
 	const parsed = typeof data == "object" ? data : parse(data);
 	const out: ValidationOutput = { valid: false };
 
@@ -349,7 +349,7 @@ export const validate: ValidateFunction = (
 
 		// Type checking
 		if (field.types || field.type) {
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+			// eslint-disable-next-line ts/no-unsafe-argument
 			const typeErrors = validateFieldType(name, field, parsed[name]);
 			if (typeErrors.length > 0) {
 				errors.push(...typeErrors.map((e) => ({ field: name, message: e })));
@@ -358,7 +358,7 @@ export const validate: ValidateFunction = (
 		}
 
 		// Regexp format check
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+		// eslint-disable-next-line ts/no-unsafe-argument
 		if (field.format && !field.format.test(parsed[name])) {
 			errors.push({
 				field: name,

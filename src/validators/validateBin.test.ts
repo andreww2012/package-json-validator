@@ -78,7 +78,7 @@ describe(validateBin, () => {
 	it("should return a Result with ChildResults that have issues if the bin field is an object with some keys having non-string values", () => {
 		const result = validateBin({
 			"my-cli": "./cli.js",
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			// eslint-disable-next-line ts/no-explicit-any
 			"my-dev-tool": 123 as any,
 		});
 		expect(result.issues).toHaveLength(0);
@@ -90,7 +90,7 @@ describe(validateBin, () => {
 	});
 
 	it("should return a Result with an issue if the bin field is neither a string nor an object", () => {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		// eslint-disable-next-line ts/no-explicit-any
 		const result = validateBin(123 as any);
 		expect(result.issues).toHaveLength(1);
 		expect(result.errorMessages).toEqual([

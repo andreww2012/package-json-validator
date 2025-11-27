@@ -67,7 +67,7 @@ describe(validateEngines, () => {
 	it("should return issues if the value is an object with some keys having non-string values", () => {
 		const result = validateEngines({
 			node: "^24.11.0",
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			// eslint-disable-next-line ts/no-explicit-any
 			npm: 123 as any,
 		});
 		expect(result.issues).toHaveLength(0);
@@ -79,7 +79,7 @@ describe(validateEngines, () => {
 	});
 
 	it("should return an issue if the value is neither a string nor an object", () => {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		// eslint-disable-next-line ts/no-explicit-any
 		const result = validateEngines(123 as any);
 		expect(result.issues).toHaveLength(1);
 		expect(result.errorMessages).toEqual([
