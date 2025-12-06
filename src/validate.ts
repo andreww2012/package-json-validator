@@ -127,7 +127,8 @@ const getSpecMap = (
 				validate: (_, value) => validateWorkspaces(value).errorMessages,
 			},
 		};
-	} else if (specName == "commonjs_1.0") {
+	}
+	if (specName == "commonjs_1.0") {
 		// http://wiki.commonjs.org/wiki/Packages/1.0
 		return {
 			bugs: {
@@ -175,7 +176,8 @@ const getSpecMap = (
 			version: { format: versionFormat, required: true, type: "string" },
 		};
 		// eslint-disable-next-line ts/no-unnecessary-condition
-	} else if (specName == "commonjs_1.1") {
+	}
+	if (specName == "commonjs_1.1") {
 		// http://wiki.commonjs.org/wiki/Packages/1.1
 		return {
 			bugs: {
@@ -218,10 +220,9 @@ const getSpecMap = (
 			scripts: { type: "object" },
 			version: { format: versionFormat, required: true, type: "string" },
 		};
-	} else {
-		// Unrecognized spec
-		return false;
 	}
+	// Unrecognized spec
+	return false;
 };
 
 const parse = (data: string) => {

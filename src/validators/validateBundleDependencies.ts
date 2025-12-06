@@ -11,7 +11,8 @@ export const validateBundleDependencies = (obj: unknown): Result => {
 
 	if (typeof obj === "boolean") {
 		return result; // No errors for boolean, as per spec
-	} else if (Array.isArray(obj)) {
+	}
+	if (Array.isArray(obj)) {
 		// If it's an array, check if all items are non-empty strings
 		for (let i = 0; i < obj.length; i++) {
 			const childResult = new ChildResult(i);

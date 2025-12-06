@@ -17,10 +17,8 @@ export const validateVersion = (version: unknown): Result => {
 		}
 	} else if (version.trim() === "") {
 		result.addIssue("the value is empty, but should be a valid version");
-	} else {
-		if (!valid(version)) {
-			result.addIssue("the value is not a valid semver version");
-		}
+	} else if (!valid(version)) {
+		result.addIssue("the value is not a valid semver version");
 	}
 
 	return result;

@@ -59,7 +59,7 @@ describe(validateFiles, () => {
 		expect(result.errorMessages).toEqual([
 			"the type should be `Array`, not `number`",
 		]);
-		expect(result.issues[0].message).toEqual(
+		expect(result.issues[0].message).toBe(
 			"the type should be `Array`, not `number`",
 		);
 	});
@@ -70,7 +70,7 @@ describe(validateFiles, () => {
 		expect(result.errorMessages).toEqual([
 			"the type should be `Array`, not `object`",
 		]);
-		expect(result.issues[0].message).toEqual(
+		expect(result.issues[0].message).toBe(
 			"the type should be `Array`, not `object`",
 		);
 	});
@@ -81,7 +81,7 @@ describe(validateFiles, () => {
 		expect(result.errorMessages).toEqual([
 			"the value is `null`, but should be an `Array` of strings",
 		]);
-		expect(result.issues[0].message).toEqual(
+		expect(result.issues[0].message).toBe(
 			"the value is `null`, but should be an `Array` of strings",
 		);
 	});

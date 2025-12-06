@@ -64,20 +64,18 @@ export class Result {
 		let newChild: ChildResult;
 		if (indexOrChild instanceof ChildResult) {
 			newChild = indexOrChild;
-		} else {
-			if (typeof child === "string") {
-				const childResult = new ChildResult(indexOrChild);
-				childResult.addIssue(child);
-				newChild = childResult;
-			} else if (Array.isArray(child)) {
-				const childResult = new ChildResult(indexOrChild);
-				for (const issueString of child) {
-					childResult.addIssue(issueString);
-				}
-				newChild = childResult;
-			} else {
-				newChild = new ChildResult(indexOrChild, child);
+		} else if (typeof child === "string") {
+			const childResult = new ChildResult(indexOrChild);
+			childResult.addIssue(child);
+			newChild = childResult;
+		} else if (Array.isArray(child)) {
+			const childResult = new ChildResult(indexOrChild);
+			for (const issueString of child) {
+				childResult.addIssue(issueString);
 			}
+			newChild = childResult;
+		} else {
+			newChild = new ChildResult(indexOrChild, child);
 		}
 		this.#childResults.push(newChild);
 	}
@@ -106,7 +104,7 @@ export class Result {
 
 /** Result object for a child (either a property in an object or an element of an array) */
 export class ChildResult extends Result {
-	#index: number;
+	readonly #index: number;
 	/** The index of this property in relation to its parent's collection (properties or array elements) */
 	get index(): number {
 		return this.#index;

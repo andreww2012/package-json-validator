@@ -17,7 +17,7 @@ const validateNonEmptyString = (
 };
 
 const repoUrlRegex =
-	/^(?:(?:git\+)?(?:https?|git):\/\/[\w.-]+(?::\d+)?(?:\/[\w.~:/?#@!$&'()*+,;=%-]+)?(?:\.git)?\/?|git@[\w.-]+:[\w.~:/?#@!$&'()*+,;=%-]+\.git)$/;
+	/^(?:(?:git\+)?(?:https?|git):\/\/[\w\-.]+(?::\d+)?(?:\/[\w!#$%&'()*+,\-./:;=?@~]+)?(?:\.git)?\/?|git@[\w\-.]+:[\w!#$%&'()*+,\-./:;=?@~]+\.git)$/;
 const repositoryValidators = {
 	directory: (value) =>
 		validateNonEmptyString(
@@ -35,9 +35,9 @@ const repositoryValidators = {
 		const result = new Result();
 
 		// Should match the url regex
-		if (!repoUrlRegex.exec(value)) {
+		if (!repoUrlRegex.test(value)) {
 			result.addIssue(
-				`the value of property "url" is invalid; it should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+				'the value of property "url" is invalid; it should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 			);
 		}
 		return result;
@@ -71,7 +71,7 @@ const isValidShorthandRepoString = (value: string): boolean => {
 	}
 
 	// Repo name should match, based on the provider
-	if (!REPONAME_REGEX[provider].exec(repo)) {
+	if (!REPONAME_REGEX[provider].test(repo)) {
 		return false;
 	}
 
@@ -115,15 +115,15 @@ export const validateRepository = (obj: unknown): Result => {
 			if (key === "directory" || key === "type" || key === "url") {
 				seenProperties.add(key);
 
-				if (typeof value !== "string") {
-					childResult.addIssue(
-						`the value of property ${propertyName} should be a string`,
-					);
-				} else {
+				if (typeof value === "string") {
 					const propertyResult = repositoryValidators[key](value);
 					propertyResult.issues.forEach((issue) => {
 						childResult.addIssue(issue.message);
 					});
+				} else {
+					childResult.addIssue(
+						`the value of property ${propertyName} should be a string`,
+					);
 				}
 			} else {
 				childResult.addIssue(
@@ -137,12 +137,12 @@ export const validateRepository = (obj: unknown): Result => {
 		// the object should at least have `type` and `url`.
 		if (!seenProperties.has("type")) {
 			result.addIssue(
-				`repository is missing property "type", which should be the type of repository this is (e.g. "git")`,
+				'repository is missing property "type", which should be the type of repository this is (e.g. "git")',
 			);
 		}
 		if (!seenProperties.has("url")) {
 			result.addIssue(
-				`repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+				'repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 			);
 		}
 	} else if (obj === null) {

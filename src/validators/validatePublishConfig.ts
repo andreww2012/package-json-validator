@@ -16,7 +16,7 @@ const validateAccess = (value: unknown): Result => {
 		}
 	} else if (value.trim() === "") {
 		result.addIssue(
-			`the value is empty, but should be "public" or "restricted"`,
+			'the value is empty, but should be "public" or "restricted"',
 		);
 	} else if (!VALID_ACCESS.includes(value)) {
 		result.addIssue(
@@ -93,11 +93,10 @@ export const validatePublishConfig = (value: unknown): Result => {
 		for (let i = 0; i < entries.length; i++) {
 			const [key, value] = entries[i] as [string, unknown];
 			let childResult: Result;
-			if (key in propertyValidators) {
-				childResult = propertyValidators[key](value);
-			} else {
-				childResult = new Result();
-			}
+			childResult =
+				key in propertyValidators
+					? propertyValidators[key](value)
+					: new Result();
 
 			result.addChildResult(i, childResult);
 		}

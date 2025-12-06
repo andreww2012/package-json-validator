@@ -14,7 +14,7 @@ function validatePerson(obj: Person | string): Result {
 	let result = new Result();
 	if (typeof obj == "string") {
 		// eslint-disable-next-line regexp/no-super-linear-backtracking, regexp/no-unused-capturing-group
-		const authorRegex = /^([^<(\s][^<(]*)?(\s*<(.*?)>)?(\s*\((.*?)\))?/;
+		const authorRegex = /^([^\s(<][^(<]*)?(\s*<(.*?)>)?(\s*\((.*?)\))?/;
 		const authorFields = authorRegex.exec(obj);
 		if (authorFields) {
 			const authorName = authorFields[1];
@@ -30,7 +30,7 @@ function validatePerson(obj: Person | string): Result {
 			result = objResult.flatten();
 		}
 	} else if (typeof obj == "object") {
-		if (typeof obj.name === "undefined") {
+		if (obj.name === undefined) {
 			result.addIssue("person should have a name");
 		}
 		const entries = Object.entries(obj) as [string, string][];
@@ -38,7 +38,7 @@ function validatePerson(obj: Person | string): Result {
 			const [key, value] = entries[i];
 			const childResult = new ChildResult(i);
 			if (key === "name" && typeof value === "string" && value.trim() === "") {
-				childResult.addIssue(`name should not be empty`);
+				childResult.addIssue("name should not be empty");
 			}
 			if (key === "email" && value && !emailFormat.test(value)) {
 				childResult.addIssue(`email is not valid: ${value}`);
@@ -77,7 +77,6 @@ export const validatePeople = (obj: People): Result => {
 			result.addChildResult(i, validatePerson(obj[i]));
 		}
 		return result;
-	} else {
-		return validatePerson(obj);
 	}
+	return validatePerson(obj);
 };

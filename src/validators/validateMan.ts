@@ -9,15 +9,15 @@ const isManStringValid = (man: string): boolean => {
 	if (fileEnd === "gz") {
 		fileEnd = stringParts.at(-2);
 	}
-	return !!fileEnd && !isNaN(parseInt(fileEnd));
+	return Boolean(fileEnd) && !isNaN(Number.parseInt(fileEnd));
 };
 
 /**
  * Validate the `man` field in a package.json, which can either be
  * a string or an array of strings.
  * The string(s) must end with a number (and optionally .gz)
- * @example ["./man/foo.1", "./man/bar.1"]
  * @see https://docs.npmjs.com/cli/v11/configuring-npm/package-json#man
+ * @example ["./man/foo.1", "./man/bar.1"]
  */
 export const validateMan = (obj: unknown): Result => {
 	const result = new Result();

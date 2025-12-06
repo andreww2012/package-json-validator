@@ -87,13 +87,13 @@ describe(validateRepository, () => {
 		expect(result.childResults).toHaveLength(3);
 		[
 			[
-				`the value of property "directory" is empty, but should be the path to this package in the repository`,
+				'the value of property "directory" is empty, but should be the path to this package in the repository',
 			],
 			[
-				`the value of property "type" is empty, but should be the type of repository this is (e.g. "git")`,
+				'the value of property "type" is empty, but should be the type of repository this is (e.g. "git")',
 			],
 			[
-				`the value of property "url" is invalid; it should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+				'the value of property "url" is invalid; it should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 			],
 		].forEach((childErrors, i) => {
 			expect(result.childResults[i].errorMessages).toEqual(childErrors);
@@ -106,10 +106,12 @@ describe(validateRepository, () => {
 		});
 		expect(result.issues).toEqual([
 			{
-				message: `repository is missing property "type", which should be the type of repository this is (e.g. "git")`,
+				message:
+					'repository is missing property "type", which should be the type of repository this is (e.g. "git")',
 			},
 			{
-				message: `repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+				message:
+					'repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 			},
 		]);
 	});
@@ -123,10 +125,12 @@ describe(validateRepository, () => {
 		});
 		expect(result.issues).toEqual([
 			{
-				message: `repository is missing property "type", which should be the type of repository this is (e.g. "git")`,
+				message:
+					'repository is missing property "type", which should be the type of repository this is (e.g. "git")',
 			},
 			{
-				message: `repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+				message:
+					'repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 			},
 		]);
 

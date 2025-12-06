@@ -14,8 +14,8 @@ const VALID_OSS = [
 /**
  * Validate the `os` field in a package.json, which should be an array of
  * valid operating systems.
- * @example ["linux", "win32"]
  * @see https://docs.npmjs.com/cli/v11/configuring-npm/package-json#os
+ * @example ["linux", "win32"]
  */
 export const validateOs = (obj: unknown): Result => {
 	const result = new Result();

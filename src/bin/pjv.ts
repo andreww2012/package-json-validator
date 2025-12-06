@@ -62,23 +62,23 @@ if (!options.quiet) {
 	);
 }
 
-if (!fs.existsSync(options.filename)) {
-	console.error("File does not exist: " + options.filename);
-	process.exitCode = 1;
-} else {
-	const contents = fs.readFileSync(options.filename).toString(),
-		results = validate(contents, options.spec, {
-			recommendations: options.recommendations,
-			warnings: options.warnings,
-		});
+if (fs.existsSync(options.filename)) {
+	const contents = fs.readFileSync(options.filename).toString();
+	const results = validate(contents, options.spec, {
+		recommendations: options.recommendations,
+		warnings: options.warnings,
+	});
 
 	if (results.valid) {
 		if (!options.quiet) {
 			console.log(results);
 		}
 	} else {
-		console.error(options.filename + " is NOT valid");
+		console.error(`${options.filename} is NOT valid`);
 		console.error(results);
 		process.exitCode = 1;
 	}
+} else {
+	console.error(`File does not exist: ${options.filename}`);
+	process.exitCode = 1;
 }

@@ -10,7 +10,8 @@ export const validateSideEffects = (value: unknown): Result => {
 
 	if (typeof value === "boolean") {
 		return result; // No errors for boolean
-	} else if (Array.isArray(value)) {
+	}
+	if (Array.isArray(value)) {
 		// If it's an array, check if all items are non-empty strings
 		for (let i = 0; i < value.length; i++) {
 			const childResult = new ChildResult(i);

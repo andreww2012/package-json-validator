@@ -10,7 +10,7 @@ const isUnpublishedVersion = (version: string): boolean => {
 		// https://docs.npmjs.com/cli/v11/configuring-npm/package-json#git-urls-as-dependencies
 		/^git(?:\+(?:ssh|http|https|file|rsync|ftp))?:/.test(version) ||
 		// https://docs.npmjs.com/cli/v11/configuring-npm/package-json#github-urls
-		/^(?:github:)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*\/[\w.-]+(?:#|$)/.test(
+		/^(?:github:)?[0-9A-Za-z]+(?:-[0-9A-Za-z]+)*\/[\w\-.]+(?:#|$)/.test(
 			version,
 		) ||
 		// https://pnpm.io/next/workspaces#workspace-protocol-workspace
@@ -32,7 +32,7 @@ const isUnpublishedVersion = (version: string): boolean => {
 const isValidVersionRange = (version: string): boolean => {
 	// https://docs.npmjs.com/cli/v11/configuring-npm/package-json#dependencies
 	return (
-		!!validRange(version) ||
+		Boolean(validRange(version)) ||
 		version === "*" ||
 		version === "" ||
 		version === "latest" ||

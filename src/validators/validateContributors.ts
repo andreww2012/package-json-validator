@@ -20,13 +20,11 @@ export const validateContributors = (obj: unknown): Result => {
 		for (let i = 0; i < obj.length; i++) {
 			let childResult: Result;
 			const item: unknown = obj[i];
-			if (!isPerson(item)) {
-				childResult = new Result([
-					`item ${i} is invalid; it should be a person object with at least a \`name\``,
-				]);
-			} else {
-				childResult = validatePeople(item);
-			}
+			childResult = isPerson(item)
+				? validatePeople(item)
+				: new Result([
+						`item ${i} is invalid; it should be a person object with at least a \`name\``,
+					]);
 			result.addChildResult(i, childResult);
 		}
 	} else {

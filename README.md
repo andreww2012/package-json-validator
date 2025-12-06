@@ -17,7 +17,7 @@
 
 ## Usage
 
-```shell
+```sh
 npm install package-json-validator
 ```
 
@@ -176,7 +176,7 @@ It takes the value, and validates it against the following criteria.
 - if it's an object, it should include a `name` field and, optionally, `email` and / or `url` fields.
 - if present, the `email` and `url` fields should be valid email and url, respectively.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -213,7 +213,7 @@ It takes the value, and validates it against the following criteria.
 - If it's a `string`, it should be a relative path to an executable file.
 - If it's an `object`, it should be a key to string value object, and the values should all be relative paths.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -248,7 +248,7 @@ It takes the value, and validates it against the following criteria.
 - the property is either an array or a boolean
 - if it's an array, all items should be strings
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -267,7 +267,7 @@ const result = validateBundleDependencies(packageData.bundleDependencies);
 This function validates the value of the `config` property of a `package.json`.
 It takes the value, and validates that it's an object.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -294,7 +294,7 @@ It takes the value, and validates it against the following criteria.
 - each object in the array should be a "person" object with at least a `name` and optionally `email` and `url`
 - the `email` and `url` properties, if present, should be valid email and URL formats.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -327,7 +327,7 @@ It takes the value, and validates it against the following criteria.
 > [!NOTE]
 > These values are the list of possible `process.arch` values [documented by Node](https://nodejs.org/api/process.html#processarch).
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -352,7 +352,7 @@ They take the value, and validate it against the following criteria.
 - The object should be a record of key value pairs
 - For each property, the key should be a valid package name, and the value should be a valid version
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -374,7 +374,7 @@ const result = validateDependencies(packageData.dependencies);
 
 This function validates the value of the `description` property of a `package.json`, checking that the value is a non-empty string.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -397,7 +397,7 @@ It takes the value, and validates it against the following criteria.
 - its keys are non-empty strings
 - its values are all non-empty strings
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -422,7 +422,7 @@ It takes the value, and validates it against the following criteria.
 - It should be of type `object`.
 - It should be a key to string value object, and the values should all be non-empty.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -447,7 +447,7 @@ It takes the value, and validates it against the following criteria.
 - If it's a `string`, it should be a path to an entry point.
 - If it's an export condition `object`, its properties should have values that are either a path to an entry point, or another exports condition object.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -488,7 +488,7 @@ It takes the value, and validates it against the following criteria.
 - the property is an array
 - all items in the array should be non-empty strings
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -506,7 +506,7 @@ const result = validateFiles(packageData.files);
 
 This function validates the value of the `homepage` property of a `package.json`, checking that the value is a string containing a valid url.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -528,7 +528,7 @@ It takes the value, and validates it against the following criteria.
 - the property is an array
 - all items in the array should be non-empty strings
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -547,7 +547,7 @@ const result = validateKeywords(packageData.keywords);
 This function validates the value of the `license` property of a `package.json`.
 It takes the value, and validates it using `validate-npm-package-license`, which is the same package that npm uses.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -565,7 +565,7 @@ const result = validateLicense(packageData.license);
 
 This function validates the value of the `main` property of a `package.json`, checking that the value is a non-empty string.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -587,7 +587,7 @@ It takes the value, and validates it against the following criteria.
 - the property is either a string or an array of strings
 - the string(s) must end in a number (and optionally .gz)
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -606,7 +606,7 @@ const result = validateMan(packageData.man);
 This function validates the value of the `name` property of a `package.json`.
 It takes the value, and validates it using `validate-npm-package-name`, which is the same package that npm uses.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -633,7 +633,7 @@ It takes the value, and validates it against the following criteria.
 > [!NOTE]
 > These values are the list of possible `process.platform` values [documented by Node](https://nodejs.org/api/process.html#processplatform).
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -652,7 +652,7 @@ const result = validateOs(packageData.os);
 This function validates the value of the `private` property of a `package.json`.
 It takes the value, and checks that it's a boolean.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -689,7 +689,7 @@ It takes the value, and validates it against the following criteria.
 > - <https://pnpm.io/package_json#publishconfig>
 > - <https://yarnpkg.com/configuration/manifest#publishConfig>
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -716,7 +716,7 @@ It takes the value, and validates it against the following criteria.
 - `url` should be a valid repo url
 - If it's a `string`, it should be the shorthand repo string from a supported provider.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -753,7 +753,7 @@ It takes the value, and validates it against the following criteria.
 - its keys are non-empty strings
 - its values are all non-empty strings
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -779,7 +779,7 @@ It takes the value, and validates it against the following criteria.
 - The value is either a boolean or an Array.
 - If it's an array, all items should be non-empty strings.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -801,7 +801,7 @@ It takes the value, and validates it against the following criteria.
 - the property is a string
 - its value is either `'commonjs'` or `'module'`
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -820,7 +820,7 @@ const result = validateType(packageData.type);
 This function validates the value of the `version` property of a `package.json`.
 It takes the value, and validates it using `semver`, which is the same package that npm uses.
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -842,7 +842,7 @@ It takes the value, and validates it against the following criteria.
 - the property is an array
 - all items in the array should be non-empty strings
 
-It returns a `Result` object (See [Result Types](#result-types)).
+It returns a `Result` object (See [Result Types]).
 
 #### Examples
 
@@ -887,9 +887,13 @@ Thanks! 💖
 ## Contributors
 
 <!-- spellchecker: disable -->
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable -->
+
 <table>
   <tbody>
     <tr>
@@ -947,9 +951,11 @@ Thanks! 💖
 </table>
 
 <!-- markdownlint-restore -->
+
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
 <!-- spellchecker: enable -->
 
 ## Appreciation
@@ -957,3 +963,5 @@ Thanks! 💖
 Many thanks to [@TechNickAI](https://github.com/TechNickAI) for creating the initial version and core infrastructure of this package! 💖
 
 > 💝 This package was templated with [`create-typescript-app`](https://github.com/JoshuaKGoldberg/create-typescript-app) using the [Bingo framework](https://create.bingo).
+
+[Result Types]: #result-types

@@ -17,7 +17,7 @@ export const validateHomepage = (value: unknown): Result => {
 		}
 	} else if (value.trim() === "") {
 		result.addIssue("the value is empty, but should be a valid url");
-	} else if (!value.match(urlFormat)) {
+	} else if (!urlFormat.test(value)) {
 		result.addIssue("the value is not a valid url");
 	}
 

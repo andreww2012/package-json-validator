@@ -83,7 +83,7 @@
 
 ### Features
 
-- **validateScripts:** adopt new Result return type ([#527](https://github.com/JoshuaKGoldberg/package-json-validator/issues/527)) ([a875082](https://github.com/JoshuaKGoldberg/package-json-validator/commit/a875082577e3ee7c5ed1e104d795b57aa31ff643)), closes [#482](https://github.com/JoshuaKGoldberg/package-json-validator/issues/482) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateScripts:** adopt new Result return type ([#527](https://github.com/JoshuaKGoldberg/package-json-validator/issues/527)) ([a875082](https://github.com/JoshuaKGoldberg/package-json-validator/commit/a875082577e3ee7c5ed1e104d795b57aa31ff643)), closes [#482](https://github.com/JoshuaKGoldberg/package-json-validator/issues/482) [#393]
 
 # [0.45.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.44.0...v0.45.0) (2025-11-05)
 
@@ -101,49 +101,49 @@
 
 ### Features
 
-- **validateDependencies:** adopt new Result return type ([#523](https://github.com/JoshuaKGoldberg/package-json-validator/issues/523)) ([b996c74](https://github.com/JoshuaKGoldberg/package-json-validator/commit/b996c7495ad20bbac09bc2dc64606602105eca55)), closes [#477](https://github.com/JoshuaKGoldberg/package-json-validator/issues/477) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateDependencies:** adopt new Result return type ([#523](https://github.com/JoshuaKGoldberg/package-json-validator/issues/523)) ([b996c74](https://github.com/JoshuaKGoldberg/package-json-validator/commit/b996c7495ad20bbac09bc2dc64606602105eca55)), closes [#477](https://github.com/JoshuaKGoldberg/package-json-validator/issues/477) [#393]
 
 # [0.42.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.41.0...v0.42.0) (2025-11-03)
 
 ### Features
 
-- **validateLicense:** adopt new Result return type ([#526](https://github.com/JoshuaKGoldberg/package-json-validator/issues/526)) ([e0e1f71](https://github.com/JoshuaKGoldberg/package-json-validator/commit/e0e1f71081da215a4775f80333fa3495760d1fb4)), closes [#481](https://github.com/JoshuaKGoldberg/package-json-validator/issues/481) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateLicense:** adopt new Result return type ([#526](https://github.com/JoshuaKGoldberg/package-json-validator/issues/526)) ([e0e1f71](https://github.com/JoshuaKGoldberg/package-json-validator/commit/e0e1f71081da215a4775f80333fa3495760d1fb4)), closes [#481](https://github.com/JoshuaKGoldberg/package-json-validator/issues/481) [#393]
 
 # [0.41.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.40.0...v0.41.0) (2025-11-03)
 
 ### Features
 
-- **validateExports:** adopt new Result return type ([#525](https://github.com/JoshuaKGoldberg/package-json-validator/issues/525)) ([36ea148](https://github.com/JoshuaKGoldberg/package-json-validator/commit/36ea1480cd3d907ac7bb26bc31f79e7f9048acc7)), closes [#480](https://github.com/JoshuaKGoldberg/package-json-validator/issues/480) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateExports:** adopt new Result return type ([#525](https://github.com/JoshuaKGoldberg/package-json-validator/issues/525)) ([36ea148](https://github.com/JoshuaKGoldberg/package-json-validator/commit/36ea1480cd3d907ac7bb26bc31f79e7f9048acc7)), closes [#480](https://github.com/JoshuaKGoldberg/package-json-validator/issues/480) [#393]
 
 # [0.40.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.39.0...v0.40.0) (2025-11-03)
 
 ### Features
 
-- **validateDirectories:** adopt new Result return type ([#524](https://github.com/JoshuaKGoldberg/package-json-validator/issues/524)) ([78c8882](https://github.com/JoshuaKGoldberg/package-json-validator/commit/78c88826570f079425169c564f51ec8d4a185480)), closes [#479](https://github.com/JoshuaKGoldberg/package-json-validator/issues/479) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateDirectories:** adopt new Result return type ([#524](https://github.com/JoshuaKGoldberg/package-json-validator/issues/524)) ([78c8882](https://github.com/JoshuaKGoldberg/package-json-validator/commit/78c88826570f079425169c564f51ec8d4a185480)), closes [#479](https://github.com/JoshuaKGoldberg/package-json-validator/issues/479) [#393]
 
 # [0.39.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.38.0...v0.39.0) (2025-11-03)
 
 ### Features
 
-- **validateDescription:** adopt new Result return type ([#522](https://github.com/JoshuaKGoldberg/package-json-validator/issues/522)) ([91af809](https://github.com/JoshuaKGoldberg/package-json-validator/commit/91af809968b0abd4c215d9aeb0cd7371ffe33ed2)), closes [#478](https://github.com/JoshuaKGoldberg/package-json-validator/issues/478) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateDescription:** adopt new Result return type ([#522](https://github.com/JoshuaKGoldberg/package-json-validator/issues/522)) ([91af809](https://github.com/JoshuaKGoldberg/package-json-validator/commit/91af809968b0abd4c215d9aeb0cd7371ffe33ed2)), closes [#478](https://github.com/JoshuaKGoldberg/package-json-validator/issues/478) [#393]
 
 # [0.38.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.37.0...v0.38.0) (2025-11-03)
 
 ### Features
 
-- **validateType:** adopt new Result return type ([#521](https://github.com/JoshuaKGoldberg/package-json-validator/issues/521)) ([cd38740](https://github.com/JoshuaKGoldberg/package-json-validator/commit/cd387401ed64a20871fe6208fffcd11546b7d8d2)), closes [#483](https://github.com/JoshuaKGoldberg/package-json-validator/issues/483) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateType:** adopt new Result return type ([#521](https://github.com/JoshuaKGoldberg/package-json-validator/issues/521)) ([cd38740](https://github.com/JoshuaKGoldberg/package-json-validator/commit/cd387401ed64a20871fe6208fffcd11546b7d8d2)), closes [#483](https://github.com/JoshuaKGoldberg/package-json-validator/issues/483) [#393]
 
 # [0.37.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.36.0...v0.37.0) (2025-11-03)
 
 ### Features
 
-- **validateCpu:** adopt new Result return type ([#519](https://github.com/JoshuaKGoldberg/package-json-validator/issues/519)) ([e259467](https://github.com/JoshuaKGoldberg/package-json-validator/commit/e25946711af136d0ea2c859fc8f3ed60f5d1c3f8)), closes [#476](https://github.com/JoshuaKGoldberg/package-json-validator/issues/476) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateCpu:** adopt new Result return type ([#519](https://github.com/JoshuaKGoldberg/package-json-validator/issues/519)) ([e259467](https://github.com/JoshuaKGoldberg/package-json-validator/commit/e25946711af136d0ea2c859fc8f3ed60f5d1c3f8)), closes [#476](https://github.com/JoshuaKGoldberg/package-json-validator/issues/476) [#393]
 
 # [0.36.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.35.0...v0.36.0) (2025-11-03)
 
 ### Features
 
-- **validateVersion:** adopt new Result return type ([#520](https://github.com/JoshuaKGoldberg/package-json-validator/issues/520)) ([76f969d](https://github.com/JoshuaKGoldberg/package-json-validator/commit/76f969df1e63efb2706fdce966d96a21a8e80b51)), closes [#484](https://github.com/JoshuaKGoldberg/package-json-validator/issues/484) [#393](https://github.com/JoshuaKGoldberg/package-json-validator/issues/393)
+- **validateVersion:** adopt new Result return type ([#520](https://github.com/JoshuaKGoldberg/package-json-validator/issues/520)) ([76f969d](https://github.com/JoshuaKGoldberg/package-json-validator/commit/76f969df1e63efb2706fdce966d96a21a8e80b51)), closes [#484](https://github.com/JoshuaKGoldberg/package-json-validator/issues/484) [#393]
 
 # [0.35.0](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.34.0...v0.35.0) (2025-11-03)
 
@@ -423,3 +423,5 @@
 - also check peerDependencies for valid semver ([#96](https://github.com/JoshuaKGoldberg/package-json-validator/issues/96)) ([b64e97a](https://github.com/JoshuaKGoldberg/package-json-validator/commit/b64e97aeefa9991fcff59bccc71b5a88e8d01fc3)), closes [#65](https://github.com/JoshuaKGoldberg/package-json-validator/issues/65)
 - don't require version or name if package has "private": true ([895f710](https://github.com/JoshuaKGoldberg/package-json-validator/commit/895f71068b5b7371c029465991fe9dec6a1a3806))
 - remove references to expired domain ([e09d248](https://github.com/JoshuaKGoldberg/package-json-validator/commit/e09d248cc09cd12bde274a9770ab0ee29d46e199))
+
+[#393]: https://github.com/JoshuaKGoldberg/package-json-validator/issues/393

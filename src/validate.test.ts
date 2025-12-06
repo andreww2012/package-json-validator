@@ -48,8 +48,8 @@ const npmWarningFields = {
 };
 
 describe(validate, () => {
-	describe("Basic", () => {
-		test("Input types", () => {
+	describe("basic", () => {
+		test("input types", () => {
 			assert.ok(validate("string").critical, "string");
 			assert.ok(validate("{").critical, "malformed object");
 			assert.ok(validate("[]").critical, "array");
@@ -61,7 +61,7 @@ describe(validate, () => {
 		});
 	});
 
-	test("Field formats", () => {
+	test("field formats", () => {
 		assert.equal(
 			validate(JSON.stringify(getPackageJson({ bin: "./path/to/program" })))
 				.valid,
@@ -117,8 +117,8 @@ describe(validate, () => {
 	});
 
 	describe("with string input", () => {
-		describe("Dependencies Ranges", () => {
-			test("Smoke", () => {
+		describe("dependencies Ranges", () => {
+			test("smoke", () => {
 				const json = getPackageJson({
 					dependencies: {
 						"caret-first": "^1.0.0",
@@ -213,7 +213,7 @@ describe(validate, () => {
 				]);
 			});
 
-			test("Dependencies with scope", () => {
+			test("dependencies with scope", () => {
 				// reference: https://github.com/JoshuaKGoldberg/package-json-validator/issues/49
 				const json = getPackageJson({
 					dependencies: {
@@ -232,7 +232,7 @@ describe(validate, () => {
 			});
 		});
 
-		test("Required fields", () => {
+		test("required fields", () => {
 			let json = getPackageJson();
 			let result = validate(JSON.stringify(json), {
 				recommendations: false,
@@ -264,7 +264,7 @@ describe(validate, () => {
 			});
 		});
 
-		test("Warning fields", () => {
+		test("warning fields", () => {
 			let json = getPackageJson(npmWarningFields);
 			let result = validate(JSON.stringify(json), {
 				recommendations: false,
@@ -285,7 +285,7 @@ describe(validate, () => {
 			}
 		});
 
-		test("Recommended fields", () => {
+		test("recommended fields", () => {
 			const recommendedFields = {
 				dependencies: { "package-json-validator": "*" },
 				engines: { node: ">=0.10.3 <0.12" },
@@ -312,7 +312,7 @@ describe(validate, () => {
 			}
 		});
 
-		test("License", () => {
+		test("license", () => {
 			// https://docs.npmjs.com/cli/v9/configuring-npm/package-json#license
 			let json = getPackageJson(npmWarningFields);
 			let result = validate(JSON.stringify(json), {
@@ -335,9 +335,10 @@ describe(validate, () => {
 			assert.equal(result.warnings?.length, 1, JSON.stringify(result));
 		});
 	});
+
 	describe("with object input", () => {
-		describe("Dependencies Ranges", () => {
-			test("Smoke", () => {
+		describe("dependencies Ranges", () => {
+			test("smoke", () => {
 				const json = getPackageJson({
 					bundledDependencies: ["dep1", "dep2"],
 					bundleDependencies: true,
@@ -442,7 +443,7 @@ describe(validate, () => {
 				]);
 			});
 
-			test("Dependencies with scope", () => {
+			test("dependencies with scope", () => {
 				// reference: https://github.com/JoshuaKGoldberg/package-json-validator/issues/49
 				const json = getPackageJson({
 					dependencies: {
@@ -461,7 +462,7 @@ describe(validate, () => {
 			});
 		});
 
-		test("Required fields", () => {
+		test("required fields", () => {
 			let json = getPackageJson();
 			let result = validate(json, {
 				recommendations: false,
@@ -493,7 +494,7 @@ describe(validate, () => {
 			});
 		});
 
-		test("Warning fields", () => {
+		test("warning fields", () => {
 			let json = getPackageJson(npmWarningFields);
 			let result = validate(json, {
 				recommendations: false,
@@ -514,7 +515,7 @@ describe(validate, () => {
 			}
 		});
 
-		test("Recommended fields", () => {
+		test("recommended fields", () => {
 			const recommendedFields = {
 				dependencies: { "package-json-validator": "*" },
 				engines: { node: ">=0.10.3 <0.12" },
@@ -541,7 +542,7 @@ describe(validate, () => {
 			}
 		});
 
-		test("Licenses", () => {
+		test("licenses", () => {
 			// https://docs.npmjs.com/cli/v9/configuring-npm/package-json#license
 			let json = getPackageJson(npmWarningFields);
 			let result = validate(json, {

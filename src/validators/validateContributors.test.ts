@@ -66,6 +66,6 @@ describe(validateContributors, () => {
 		expect(result.errorMessages).toEqual([
 			"item 1 is invalid; it should be a person object with at least a `name`",
 		]);
-		expect(mockValidatePeople).toHaveBeenCalledTimes(1);
+		expect(mockValidatePeople).toHaveBeenCalledOnce();
 	});
 });

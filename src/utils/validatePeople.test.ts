@@ -129,7 +129,7 @@ describe(validatePeople, () => {
 			"<b@rubble.com> (http://barneyrubble.tumblr.com/)",
 		);
 		expect(result.errorMessages).toEqual(["person should have a name"]);
-		expect(result.issues.length).toBe(1);
+		expect(result.issues).toHaveLength(1);
 
 		// @ts-expect-error testing invalid param
 		result = validatePeople({
@@ -137,7 +137,7 @@ describe(validatePeople, () => {
 			url: "http://barneyrubble.tumblr.com/",
 		});
 		expect(result.errorMessages).toEqual(["person should have a name"]);
-		expect(result.issues.length).toBe(1);
+		expect(result.issues).toHaveLength(1);
 	});
 
 	it("should require non-empty name", () => {
@@ -147,7 +147,7 @@ describe(validatePeople, () => {
 			url: "http://barneyrubble.tumblr.com/",
 		});
 		expect(result.errorMessages).toEqual(["name should not be empty"]);
-		expect(result.childResults[1].issues.length).toBe(1);
+		expect(result.childResults[1].issues).toHaveLength(1);
 
 		result = validatePeople({
 			email: "<b@rubble.com>",
@@ -155,7 +155,7 @@ describe(validatePeople, () => {
 			url: "http://barneyrubble.tumblr.com/",
 		});
 		expect(result.errorMessages).toEqual(["name should not be empty"]);
-		expect(result.childResults[1].issues.length).toBe(1);
+		expect(result.childResults[1].issues).toHaveLength(1);
 	});
 
 	it("should report error when not a string or object", () => {
@@ -164,7 +164,7 @@ describe(validatePeople, () => {
 		expect(result.errorMessages).toEqual([
 			"person field must be an object or a string",
 		]);
-		expect(result.issues.length).toBe(1);
+		expect(result.issues).toHaveLength(1);
 	});
 
 	describe(isPerson, () => {

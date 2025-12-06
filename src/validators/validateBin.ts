@@ -15,7 +15,7 @@ export const validateBin = (obj: unknown): Result => {
 
 	if (typeof obj === "string") {
 		if (obj.trim() === "") {
-			result.addIssue(`the value is empty, but should be a relative path`);
+			result.addIssue("the value is empty, but should be a relative path");
 		}
 	} else if (obj && typeof obj === "object" && !Array.isArray(obj)) {
 		let propertyNumber = 0;

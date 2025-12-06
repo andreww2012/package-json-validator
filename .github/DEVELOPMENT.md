@@ -2,7 +2,7 @@
 
 After [forking the repo from GitHub](https://help.github.com/articles/fork-a-repo) and [installing pnpm](https://pnpm.io/installation):
 
-```shell
+```sh
 git clone https://github.com/(your-name-here)/package-json-validator
 cd package-json-validator
 pnpm install
@@ -15,13 +15,13 @@ pnpm install
 
 Run locally to build source files from `src/` into output files in `lib/`:
 
-```shell
+```sh
 pnpm build
 ```
 
 Add `--watch` to run the builder in a watch mode that continuously cleans and recreates `lib/` as you save files:
 
-```shell
+```sh
 pnpm build --watch
 ```
 
@@ -32,7 +32,7 @@ It should be applied automatically when you save files in VS Code or make a Git 
 
 To manually reformat all files, you can run:
 
-```shell
+```sh
 pnpm format --write
 ```
 
@@ -49,7 +49,7 @@ Read the individual documentation for each linter to understand how it can be co
 
 For example, ESLint can be run with `--fix` to auto-fix some lint rule complaints:
 
-```shell
+```sh
 pnpm lint --fix
 ```
 
@@ -58,13 +58,13 @@ pnpm lint --fix
 [Vitest](https://vitest.dev) is used for tests.
 You can run it locally on the command-line:
 
-```shell
+```sh
 pnpm test
 ```
 
 Add the `--coverage` flag to compute test coverage and place reports in the `coverage/` directory:
 
-```shell
+```sh
 pnpm test --coverage
 ```
 
@@ -82,12 +82,12 @@ You should be able to see suggestions from [TypeScript](https://typescriptlang.o
 
 However, it can be useful to run the TypeScript command-line (`tsc`) to type check all files in `src/`:
 
-```shell
+```sh
 pnpm typecheck
 ```
 
 Add `--watch` to keep the type checker running in a watch mode that updates the display as you save files:
 
-```shell
+```sh
 pnpm typecheck --watch
 ```
