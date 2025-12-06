@@ -18,7 +18,7 @@ export const validateFieldType = (
 	}
 	const errors: string[] = [];
 	const validFieldTypes = field.types ?? [field.type];
-	const valueType = value instanceof Array ? "array" : typeof value;
+	const valueType = Array.isArray(value) ? "array" : typeof value;
 	if (!validFieldTypes.includes(valueType as SpecType)) {
 		errors.push(
 			`Type for field ${name} was expected to be ${validFieldTypes.join(" or ")}, not ${valueType}`,

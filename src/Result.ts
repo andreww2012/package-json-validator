@@ -8,7 +8,7 @@ export interface Issue {
 export class Result {
 	/** Equivalent of the previous return type, the full collection of error messages (including errors from child properties) */
 	get errorMessages(): string[] {
-		let errorMessages = this.#issues.map((issue) => issue.message);
+		const errorMessages = this.#issues.map((issue) => issue.message);
 		for (const childResult of this.#childResults) {
 			errorMessages.push(...childResult.errorMessages);
 		}

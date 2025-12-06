@@ -37,7 +37,7 @@ const getSpecMap = (
 	isPrivate: boolean,
 	specName: SpecName = "npm",
 ): false | SpecMap => {
-	if (specName == "npm") {
+	if (specName === "npm") {
 		// https://docs.npmjs.com/cli/v11/configuring-npm/package-json
 		// https://nodejs.org/api/packages.html
 		return {
@@ -128,7 +128,7 @@ const getSpecMap = (
 			},
 		};
 	}
-	if (specName == "commonjs_1.0") {
+	if (specName === "commonjs_1.0") {
 		// http://wiki.commonjs.org/wiki/Packages/1.0
 		return {
 			bugs: {
@@ -175,9 +175,8 @@ const getSpecMap = (
 			scripts: { type: "object" },
 			version: { format: versionFormat, required: true, type: "string" },
 		};
-		// eslint-disable-next-line ts/no-unnecessary-condition
 	}
-	if (specName == "commonjs_1.1") {
+	if (specName === "commonjs_1.1") {
 		// http://wiki.commonjs.org/wiki/Packages/1.1
 		return {
 			bugs: {
@@ -226,7 +225,7 @@ const getSpecMap = (
 };
 
 const parse = (data: string) => {
-	if (typeof data != "string") {
+	if (typeof data !== "string") {
 		// It's just a string
 		return "Invalid data - Not a string";
 	}
@@ -242,11 +241,7 @@ const parse = (data: string) => {
 		return errorMessage;
 	}
 
-	if (
-		typeof parsed !== "object" ||
-		parsed === null ||
-		parsed instanceof Array
-	) {
+	if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
 		return `Invalid JSON - not an object (actual type: ${typeof parsed})`;
 	}
 
@@ -296,10 +291,10 @@ export const validate: ValidateFunction = (
 	options: ValidationOptions = {},
 ): ValidationOutput => {
 	// eslint-disable-next-line ts/no-unsafe-assignment
-	const parsed = typeof data == "object" ? data : parse(data);
+	const parsed = typeof data === "object" ? data : parse(data);
 	const out: ValidationOutput = { valid: false };
 
-	if (typeof parsed == "string") {
+	if (typeof parsed === "string") {
 		out.critical = parsed;
 		return out;
 	}
@@ -378,7 +373,7 @@ export const validate: ValidateFunction = (
 		}
 	}
 
-	out.valid = errors.length > 0 ? false : true;
+	out.valid = errors.length === 0;
 	if (errors.length > 0) {
 		out.errors = errors;
 	}

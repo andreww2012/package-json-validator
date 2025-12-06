@@ -1,18 +1,19 @@
+import type { People, Person } from "./validation.types.ts";
+
 import { emailFormat, urlFormat } from "../formats.ts";
 import { ChildResult, Result } from "../Result.ts";
-import { type People, type Person } from "./validation.types.ts";
-
-export const isPersonArray = (obj: unknown): obj is Person[] => {
-	return Array.isArray(obj) && obj.every((item) => isPerson(item));
-};
 
 export const isPerson = (obj: unknown): obj is Person => {
 	return typeof obj === "object" && obj !== null && "name" in obj;
 };
 
+export const isPersonArray = (obj: unknown): obj is Person[] => {
+	return Array.isArray(obj) && obj.every((item) => isPerson(item));
+};
+
 function validatePerson(obj: Person | string): Result {
 	let result = new Result();
-	if (typeof obj == "string") {
+	if (typeof obj === "string") {
 		// eslint-disable-next-line regexp/no-super-linear-backtracking, regexp/no-unused-capturing-group
 		const authorRegex = /^([^\s(<][^(<]*)?(\s*<(.*?)>)?(\s*\((.*?)\))?/;
 		const authorFields = authorRegex.exec(obj);
@@ -29,7 +30,7 @@ function validatePerson(obj: Person | string): Result {
 			// into this result object.
 			result = objResult.flatten();
 		}
-	} else if (typeof obj == "object") {
+	} else if (typeof obj === "object") {
 		if (obj.name === undefined) {
 			result.addIssue("person should have a name");
 		}

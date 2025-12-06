@@ -29,7 +29,7 @@ export const validateUrlTypes = (
 		if (!urlFormat.test(obj)) {
 			errors.push(`URL not valid for ${name}: ${obj}`);
 		}
-	} else if (obj instanceof Array) {
+	} else if (Array.isArray(obj)) {
 		for (const element of obj) {
 			validateUrlType(element);
 		}

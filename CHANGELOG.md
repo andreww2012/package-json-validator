@@ -191,7 +191,7 @@
 
 ### Features
 
-- deprecate CLI ([#413](https://github.com/JoshuaKGoldberg/package-json-validator/issues/413)) ([f90520f](https://github.com/JoshuaKGoldberg/package-json-validator/commit/f90520f233dbe69fe11704b2a4a62068957b13a8)), closes [#264](https://github.com/JoshuaKGoldberg/package-json-validator/issues/264) [/github.com/JoshuaKGoldberg/package-json-validator/issues/264#issuecomment-3212272711](https://github.com//github.com/JoshuaKGoldberg/package-json-validator/issues/264/issues/issuecomment-3212272711)
+- deprecate CLI ([#413](https://github.com/JoshuaKGoldberg/package-json-validator/issues/413)) ([f90520f](https://github.com/JoshuaKGoldberg/package-json-validator/commit/f90520f233dbe69fe11704b2a4a62068957b13a8)), closes [#264](https://github.com/JoshuaKGoldberg/package-json-validator/issues/264) [/github.com/JoshuaKGoldberg/package-json-validator/issues/264#issuecomment-3212272711](https://github.com/JoshuaKGoldberg/package-json-validator/issues/264#issuecomment-3212272711)
 
 ## [0.29.1](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.29.0...v0.29.1) (2025-08-15)
 
@@ -257,7 +257,7 @@
 
 ### Features
 
-- **validateDependencies:** Improve dependency name validation ([#339](https://github.com/JoshuaKGoldberg/package-json-validator/issues/339)) ([6c30d24](https://github.com/JoshuaKGoldberg/package-json-validator/commit/6c30d244f0d0683168b567268367c91116717aee)), closes [/github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1165#issuecomment-3054338310](https://github.com//github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1165/issues/issuecomment-3054338310)
+- **validateDependencies:** Improve dependency name validation ([#339](https://github.com/JoshuaKGoldberg/package-json-validator/issues/339)) ([6c30d24](https://github.com/JoshuaKGoldberg/package-json-validator/commit/6c30d244f0d0683168b567268367c91116717aee)), closes [/github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1165#issuecomment-3054338310](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1165#issuecomment-3054338310)
 
 ## [0.20.1](https://github.com/JoshuaKGoldberg/package-json-validator/compare/v0.20.0...v0.20.1) (2025-07-03)
 

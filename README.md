@@ -36,42 +36,42 @@ For tools that run these validations, see:
 
 Following are the types involved in the return type of our granular `validate*` functions.
 
-### Result
+### `Result`
 
 The `Result` type, is the common top-level return type for all of our granular `validate*` functions.
 It provides rich information about the nature of the issues encountered as part of validating.
 For complex objects like `exports`, its tree structure can give information on which parts of the structure have issues.
 
-#### errorMessages: string[]
+#### `errorMessages: string[]`
 
 The full collection of error messages (including errors from child element).
 This consists of the `Issue.message` for all of the items in this Result's `issues`, as well as the `message`s of all descendent `issues`.
 
-#### issues: Issue[]
+#### `issues: Issue[]`
 
 Collection of issues for _this_ object (property or array element).
 
-#### childResults: ChildResult[]
+#### `childResults: ChildResult[]`
 
 Collection of result objects for child elements (either properties or array elements), if this property is an object or array.
 
-### ChildResult extends Result
+### `ChildResult extends Result`
 
 Result object for a child (either a property in an object or an element of an array).
 
-#### index: number
+#### `index: number`
 
 The index of this property in relation to its parent's collection (properties or array elements).
 
 ### Issue
 
-#### message: string
+#### `message: string`
 
 The message with information about this issue.
 
 ## API
 
-### validate(data, options?)
+### `validate(data, options?)`
 
 This function validates an entire `package.json` and returns a list of errors, if
 any violations are found.
@@ -167,7 +167,7 @@ console.log(data);
 // }
 ```
 
-### validateAuthor(value)
+### `validateAuthor(value)`
 
 This function validates the value of the `author` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -204,7 +204,7 @@ const packageData = {
 const result = validateAuthor(packageData.author);
 ```
 
-### validateBin(value)
+### `validateBin(value)`
 
 This function validates the value of the `bin` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -240,7 +240,7 @@ const packageData = {
 const result = validateBin(packageData.bin);
 ```
 
-### validateBundleDependencies(value)
+### `validateBundleDependencies(value)`
 
 This function validates the value of the `bundleDependencies` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -262,7 +262,7 @@ const packageData = {
 const result = validateBundleDependencies(packageData.bundleDependencies);
 ```
 
-### validateConfig(value)
+### `validateConfig(value)`
 
 This function validates the value of the `config` property of a `package.json`.
 It takes the value, and validates that it's an object.
@@ -285,7 +285,7 @@ const packageData = {
 const result = validateConfig(packageData.config);
 ```
 
-### validateContributors(value)
+### `validateContributors(value)`
 
 This function validates the value of the `contributors` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -314,7 +314,7 @@ const packageData = {
 const result = validateContributors(packageData.contributors);
 ```
 
-### validateCpu(value)
+### `validateCpu(value)`
 
 This function validates the value of the `cpu` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -341,7 +341,7 @@ const packageData = {
 const result = validateCpu(packageData.cpu);
 ```
 
-### validateDependencies(value)
+### `validateDependencies(value)`
 
 Also: `validateDevDependencies(value)`, `validateOptionalDependencies(value)`, and `validatePeerDependencies(value)`
 
@@ -370,7 +370,7 @@ const packageData = {
 const result = validateDependencies(packageData.dependencies);
 ```
 
-### validateDescription(value)
+### `validateDescription(value)`
 
 This function validates the value of the `description` property of a `package.json`, checking that the value is a non-empty string.
 
@@ -388,7 +388,7 @@ const packageData = {
 const result = validateDescription(packageData.description);
 ```
 
-### validateDirectories(value)
+### `validateDirectories(value)`
 
 This function validates the value of the `directories` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -414,7 +414,7 @@ const packageData = {
 const result = validateDirectories(packageData.directories);
 ```
 
-### validateEngines(value)
+### `validateEngines(value)`
 
 This function validates the value of the `engines` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -438,7 +438,7 @@ const packageData = {
 const result = validateEngines(packageData.engines);
 ```
 
-### validateExports(value)
+### `validateExports(value)`
 
 This function validates the value of the `exports` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -480,7 +480,7 @@ const packageData = {
 const result = validateExports(packageData.exports);
 ```
 
-### validateFiles(value)
+### `validateFiles(value)`
 
 This function validates the value of the `files` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -502,7 +502,7 @@ const packageData = {
 const result = validateFiles(packageData.files);
 ```
 
-### validateHomepage(value)
+### `validateHomepage(value)`
 
 This function validates the value of the `homepage` property of a `package.json`, checking that the value is a string containing a valid url.
 
@@ -520,7 +520,7 @@ const packageData = {
 const result = validateDescription(packageData.homepage);
 ```
 
-### validateKeywords(value)
+### `validateKeywords(value)`
 
 This function validates the value of the `keywords` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -542,7 +542,7 @@ const packageData = {
 const result = validateKeywords(packageData.keywords);
 ```
 
-### validateLicense(value)
+### `validateLicense(value)`
 
 This function validates the value of the `license` property of a `package.json`.
 It takes the value, and validates it using `validate-npm-package-license`, which is the same package that npm uses.
@@ -561,7 +561,7 @@ const packageData = {
 const result = validateLicense(packageData.license);
 ```
 
-### validateMain(value)
+### `validateMain(value)`
 
 This function validates the value of the `main` property of a `package.json`, checking that the value is a non-empty string.
 
@@ -579,7 +579,7 @@ const packageData = {
 const result = validateMain(packageData.main);
 ```
 
-### validateMan(value)
+### `validateMan(value)`
 
 This function validates the value of the `man` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -601,7 +601,7 @@ const packageData = {
 const result = validateMan(packageData.man);
 ```
 
-### validateName(value)
+### `validateName(value)`
 
 This function validates the value of the `name` property of a `package.json`.
 It takes the value, and validates it using `validate-npm-package-name`, which is the same package that npm uses.
@@ -620,7 +620,7 @@ const packageData = {
 const result = validateName(packageData.name);
 ```
 
-### validateOs(value)
+### `validateOs(value)`
 
 This function validates the value of the `os` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -647,7 +647,7 @@ const packageData = {
 const result = validateOs(packageData.os);
 ```
 
-### validatePrivate(value)
+### `validatePrivate(value)`
 
 This function validates the value of the `private` property of a `package.json`.
 It takes the value, and checks that it's a boolean.
@@ -666,7 +666,7 @@ const packageData = {
 const result = validatePrivate(packageData.private);
 ```
 
-### validatePublishConfig(value)
+### `validatePublishConfig(value)`
 
 This function validates the value of the `publishConfig` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -705,7 +705,7 @@ const packageData = {
 const result = validatePublishConfig(packageData.publishConfig);
 ```
 
-### validateRepository(value)
+### `validateRepository(value)`
 
 This function validates the value of the `repository` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -744,7 +744,7 @@ const packageData = {
 const result = validateRepository(packageData.repository);
 ```
 
-### validateScripts(value)
+### `validateScripts(value)`
 
 This function validates the value of the `scripts` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -771,7 +771,7 @@ const packageData = {
 const result = validateScripts(packageData.scripts);
 ```
 
-### validateSideEffects(value)
+### `validateSideEffects(value)`
 
 This function validates the value of the `sideEffects` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -793,7 +793,7 @@ const packageData = {
 const result = validateSideEffects(packageData.sideEffects);
 ```
 
-### validateType(value)
+### `validateType(value)`
 
 This function validates the value of the `type` property of a `package.json`.
 It takes the value, and validates it against the following criteria.
@@ -815,7 +815,7 @@ const packageData = {
 const result = validateType(packageData.type);
 ```
 
-### validateVersion(value)
+### `validateVersion(value)`
 
 This function validates the value of the `version` property of a `package.json`.
 It takes the value, and validates it using `semver`, which is the same package that npm uses.
@@ -834,7 +834,7 @@ const packageData = {
 const result = validateVersion(packageData.version);
 ```
 
-### validateWorkspaces(value)
+### `validateWorkspaces(value)`
 
 This function validates the value of the `workspaces` property of a `package.json`.
 It takes the value, and validates it against the following criteria.

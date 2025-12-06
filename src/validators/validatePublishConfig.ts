@@ -92,8 +92,7 @@ export const validatePublishConfig = (value: unknown): Result => {
 		const entries = Object.entries(value);
 		for (let i = 0; i < entries.length; i++) {
 			const [key, value] = entries[i] as [string, unknown];
-			let childResult: Result;
-			childResult =
+			const childResult =
 				key in propertyValidators
 					? propertyValidators[key](value)
 					: new Result();
