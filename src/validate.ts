@@ -234,10 +234,10 @@ const parse = (data: string) => {
 	try {
 		// eslint-disable-next-line ts/no-unsafe-assignment
 		parsed = JSON.parse(data);
-	} catch (e: unknown) {
+	} catch (error: unknown) {
 		let errorMessage = "Invalid JSON";
-		if (e instanceof Error) {
-			errorMessage = `Invalid JSON - ${e.toString()}`;
+		if (error instanceof Error) {
+			errorMessage = `Invalid JSON - ${error.toString()}`;
 		}
 		return errorMessage;
 	}

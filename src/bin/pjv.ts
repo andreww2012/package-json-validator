@@ -6,7 +6,6 @@
  * See README.md for more information
  */
 import fs from "node:fs";
-import process from "node:process";
 import yargs from "yargs";
 
 import type { SpecName } from "../Spec.types.ts";

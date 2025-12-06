@@ -6,13 +6,15 @@ import { isPerson, validatePeople } from "../utils/index.ts";
  * consisting of objects with `name` and optionally, `email` and `url` fields.
  * The `email` and `url` fields, if present, should be valid email and URL formats.
  *
+ * ```json
  * [
  *   {
- *     "name" : "Barney Rubble"
+ *     "name" : "Barney Rubble",
  *     "email" : "b@rubble.com",
  *     "url" : "http://barnyrubble.tumblr.com/"
  *   }
  * ]
+ * ```
  */
 export const validateContributors = (obj: unknown): Result => {
 	const result = new Result();

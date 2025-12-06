@@ -9,7 +9,7 @@ const isManStringValid = (man: string): boolean => {
 	if (fileEnd === "gz") {
 		fileEnd = stringParts.at(-2);
 	}
-	return Boolean(fileEnd) && !isNaN(Number.parseInt(fileEnd));
+	return Boolean(fileEnd) && !Number.isNaN(Number.parseInt(fileEnd));
 };
 
 /**

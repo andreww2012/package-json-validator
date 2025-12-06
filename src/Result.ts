@@ -10,7 +10,7 @@ export class Result {
 	get errorMessages(): string[] {
 		let errorMessages = this.#issues.map((issue) => issue.message);
 		for (const childResult of this.#childResults) {
-			errorMessages = errorMessages.concat(childResult.errorMessages);
+			errorMessages.push(...childResult.errorMessages);
 		}
 		return errorMessages;
 	}
